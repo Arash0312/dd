@@ -14,20 +14,31 @@
         }
         .button {
             padding: 10px 20px;
-            background-color: #FFA500;
-            color: black;
+            background: linear-gradient(45deg, #FF5733, #FFBD33, #75FF33, #33FFBD, #335BFF, #A133FF, #FF33A1);
+            color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 12px;
+            font-size: 14px;
             margin-top: 20px;
+            transition: background 0.5s;
+            background-size: 400% 400%;
+        }
+        .button:hover {
+            animation: gradient 5s ease infinite;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
     </style>
 </head>
 <body>
     <h1>ABF-app</h1>
-    <p>Select your posision</p>
+    <p>Select your position</p>
     <button class="button" onclick="window.location.href='omp.html'">صرافی omp</button>
-    <button class="button" onclick="window.location.href='tonkeeper.html'">ورود به تونکیپر</button>
+    <button class="button" onclick="window.location.href='tonkeeper.html'">ورود به تونی‌کیپر</button>
+    <button class="button" onclick="window.location.href='https://t.me/HamsterkeyReadybot/Notpixel'">Airdrops</button>
 </body>
 </html>
