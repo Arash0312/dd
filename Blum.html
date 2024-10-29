@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خطرات اتوکلیکر بلوم</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            background: linear-gradient(to right, #f0f8ff, #e6e6fa);
+            color: #333;
+        }
+        h1, h2 {
+            color: #4b0082;
+        }
+        ul {
+            list-style-type: square;
+        }
+        .hidden {
+            display: none;
+        }
+        .footer {
+            margin-top: 20px;
+            padding: 10px;
+            border-top: 1px solid #ccc;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>خطر بن شدن با اتوکلیکر بلوم</h1>
+    <p>استفاده از اتوکلیکر بلوم می‌تواند خطراتی به همراه داشته باشد. مهم‌ترین خطر، احتمال <strong>بن شدن</strong> حساب کاربری شما در پروژه‌های مختلف است. ⚠️</p>
+    <p>برخی از پروژه‌ها قوانین سخت‌گیرانه‌ای دارند که استفاده از ابزارهای خودکار مانند اتوکلیکرها را ممنوع می‌کنند. عدم رعایت این قوانین ممکن است منجر به اقدامات انضباطی علیه حساب کاربری شما شود. لذا قبل از استفاده از این ابزار، توصیه می‌شود:</p>
+    <ul>
+        <li>قوانین و مقررات پروژه‌ها را با دقت مطالعه کنید.</li>
+        <li>ریسک‌های مرتبط با استفاده از اتوکلیکر را بسنجید.</li>
+        <li>در صورت شک و تردید، از استفاده از اتوکلیکر خودداری کنید.</li>
+    </ul>
+    <p>توجه داشته باشید که تیم ایردراپ به فارسی هیچ‌گونه مسئولیتی در قبال مشکلات ناشی از استفاده از اتوکلیکر بلوم قبول نمی‌کند. ❌</p>
+
+    <h2>تایید استفاده از اتوکلیکر</h2>
+    <label>
+        <input type="checkbox" id="agreeCheckbox"> من ریسک‌های مربوط به بن شدن را درک کرده‌ام.
+    </label>
+    <br><br>
+    <button id="confirmButton" disabled>تایید</button>
+
+    <div id="linkContainer" class="hidden">
+        <h3>لینک اتوکلیکر بلوم:</h3>
+        <a href="https://github.com/Aaaa778s/Blumne/raw/main/blum-autoclicker.user.js" target="_blank">https://github.com/Aaaa778s/Blumne/raw/main/blum-autoclicker.user.js</a>
+    </div>
+
+    <div>
+        <h3>آموزش:</h3>
+        <a href="https://t.me/AirdropBeFarsi/9897" target="_blank">لینک آموزش</a>
+    </div>
+
+    <div class="footer">
+        <p>تیم ایردراپ به فارسی هیچ‌گونه مسئولیتی در قبال استفاده از این ابزار ندارد.</p>
+    </div>
+
+    <script>
+        const checkbox = document.getElementById('agreeCheckbox');
+        const confirmButton = document.getElementById('confirmButton');
+        const linkContainer = document.getElementById('linkContainer');
+
+        checkbox.addEventListener('change', () => {
+            confirmButton.disabled = !checkbox.checked;
+        });
+
+        confirmButton.addEventListener('click', () => {
+            linkContainer.classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
