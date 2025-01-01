@@ -21,29 +21,23 @@
             list-style-type: none;
             padding: 0;
             display: flex;
-            flex-wrap: wrap; /* عناصر را به خط‌های جدید می‌آورد */
-            justify-content: center; /* عناصر را در وسط قرار می‌دهد */
+            flex-wrap: wrap; /* اجازه می‌دهد تا عناصر در ردیف‌های جدید قرار گیرند */
+            justify-content: center; /* عناصر را در وسط صفحه قرار می‌دهد */
         }
         li {
             margin: 10px;
-            width: 45%; /* عرض مشخص برای هر دکمه */
+            width: 45%; /* عرض هر آیتم 45% از عرض صفحه */
+            box-sizing: border-box; /* برای جلوگیری از افزایش اندازه با padding */
         }
         a {
-            display: flex; /* نمایش به صورت flex */
-            align-items: center; /* تراز عمودی برای متن و تصویر */
-            justify-content: center; /* تراز افقی */
+            display: block; /* نمایش به صورت بلوک */
             padding: 10px 15px;
             border-radius: 5px;
             background-color: #4caf50; /* رنگ سبز */
             color: white;
             text-decoration: none;
             transition: background-color 0.3s;
-            height: 70px; /* ارتفاع ثابت برای لینک‌ها */
-        }
-        a img {
-            width: 30px; /* اندازه تصویر */
-            height: 30px; /* اندازه تصویر */
-            margin-right: 10px; /* فاصله بین تصویر و متن */
+            text-align: center;
         }
         a:hover {
             background-color: #45a049; /* رنگ سبز تیره‌تر در حالت هاور */
@@ -53,21 +47,21 @@
 <body>
     <h1>-Airdrops-</h1>
     <ul>
-        <li><a href="https://t.me/notpixel/app?startapp=f5438078953_s651466"><img src="image1.jpg" alt="NotPixel">NotPixel💫</a></li>
-        <li><a href="https://t.me/theYescoin_bot/Yescoin?startapp=gb99w6_AirdropBeFarsi"><img src="image2.jpg" alt="YesCoin">YesCoin💫</a></li>
-        <li><a href="https://t.me/CatteaAIbot/gameapp?startapp=r_6_1149244"><img src="image3.jpg" alt="Cattea">Cattea💫</a></li>
-        <li><a href="https://t.me/notcoin_bot?startapp=er_7532231"><img src="image4.jpg" alt="Notcoin">Notcoin💫</a></li>
-        <li><a href="https://t.me/blum/app?startapp=tribe_airdropbefarsi-ref_6UAGO8CES1"><img src="image5.jpg" alt="Blum">Blum💫</a></li>
-        <li><a href="https://t.me/coub/app?startapp=coub__marker_17876379"><img src="image6.jpg" alt="Coub">Coub💫</a></li>
-        <li><a href="t.me/zoo_story_bot/game?startapp=ref5438078953"><img src="image7.jpg" alt="Zoo">Zoo💫</a></li>
-        <li><a href="https://t.me/PAWSOG_bot/PAWS?startapp=OiOzPfZ7"><img src="image8.jpg" alt="Paws">Paws💫</a></li>
-        <li><a href="http://t.me/memhash_bot/start?startapp=5w4NPG"><img src="image9.jpg" alt="Memhash">Memhash💫</a></li>
-        <li><a href="https://t.me/cexio_tap_bot?startapp=1716280473850462"><img src="image10.jpg" alt="Cex">Cex</a></li>
-        <li><a href="https://t.me/frogfarmbot/frogfarm?startapp=5438078953"><img src="image11.jpg" alt="FrogFarm">FrogFarm</a></li>
-        <li><a href="https://t.me/tapswap_mirror_bot?startapp=r_5438078953"><img src="image12.jpg" alt="TapSwap">TapSwap</a></li>
-        <li><a href="https://t.me/collection_hunt_bot/start?startapp=referrerId42798570"><img src="image13.jpg" alt="Collection Hunt">Collection hunt</a></li>
-        <li><a href="https://t.me/playdeckbot/market?startapp=eyJyZWYiOjU0MzgwNzg5NTN9"><img src="image14.jpg" alt="Playdeck">Playdeck</a></li>
-        <li><a href="https://t.me/TimeFarmCryptoBot?startapp=6LW6vINvtYrAa585"><img src="image15.jpg" alt="TimeFarm">TimeFarm</a></li>
+        <li><a href="https://t.me/notpixel/app?startapp=f5438078953_s651466">NotPixel💫</a></li>
+        <li><a href="https://t.me/theYescoin_bot/Yescoin?startapp=gb99w6_AirdropBeFarsi">YesCoin💫</a></li>
+        <li><a href="https://t.me/CatteaAIbot/gameapp?startapp=r_6_1149244">Cattea💫</a></li>
+        <li><a href="https://t.me/notcoin_bot?startapp=er_7532231">Notcoin💫</a></li>
+        <li><a href="https://t.me/blum/app?startapp=tribe_airdropbefarsi-ref_6UAGO8CES1">Blum💫</a></li>
+        <li><a href="https://t.me/coub/app?startapp=coub__marker_17876379">Coub💫</a></li>
+        <li><a href="t.me/zoo_story_bot/game?startapp=ref5438078953">Zoo💫</a></li>
+        <li><a href="https://t.me/PAWSOG_bot/PAWS?startapp=OiOzPfZ7">Paws💫</a></li>
+        <li><a href="http://t.me/memhash_bot/start?startapp=5w4NPG">Memhash💫</a></li>
+        <li><a href="https://t.me/cexio_tap_bot?startapp=1716280473850462">Cex</a></li>
+        <li><a href="https://t.me/frogfarmbot/frogfarm?startapp=5438078953">FrogFarm</a></li>
+        <li><a href="https://t.me/tapswap_mirror_bot?startapp=r_5438078953">TapSwap</a></li>
+        <li><a href="https://t.me/collection_hunt_bot/start?startapp=referrerId42798570">Collection hunt</a></li>
+        <li><a href="https://t.me/playdeckbot/market?startapp=eyJyZWYiOjU0MzgwNzg5NTN9">Playdeck</a></li>
+        <li><a href="https://t.me/TimeFarmCryptoBot?startapp=6LW6vINvtYrAa585">TimeFarm</a></li>
     </ul>
 </body>
 </html>
