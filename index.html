@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ABF App</title>
-    <!-- اضافه کردن فونت فارسی از Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Vazir&display=swap" rel="stylesheet">
+    <!-- اضافه کردن فونت‌های فارسی و انگلیسی -->
+    <link href="https://fonts.googleapis.com/css2?family=Vazir&family=Roboto&display=swap" rel="stylesheet">
     <style>
         /* کلیات استایل صفحه */
         body {
-            background-color: #111;
+            background-image: url('Picsart_25-01-01_23-03-18-152.jpg'); /* تصویر پس زمینه */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             color: white;
-            font-family: 'Vazir', sans-serif;
+            font-family: 'Roboto', sans-serif;
             text-align: center;
             margin: 0;
             height: 100vh;
@@ -47,7 +50,7 @@
 
         /* انیمیشن برای دلار */
         .dollar {
-            font-size: 4rem;
+            font-size: 5rem; /* اندازه دلار به اندازه کافی بزرگ باشد */
             margin-top: 20px;
             opacity: 0;
             animation: fadeIn 2s ease-in-out 3s forwards;
@@ -81,7 +84,11 @@
             }
         }
 
-        /* استایل صفحه اصلی (شبیه به کدی که قبلاً به من داده بودید) */
+        /* استایل برای صفحه اصلی (دکمه‌ها و سایر محتوا) */
+        #main-content {
+            display: none; /* صفحه اصلی مخفی می‌شود */
+        }
+
         .button-container {
             display: flex;
             justify-content: center;
@@ -120,15 +127,15 @@
     </style>
 </head>
 <body>
-    <!-- انیمیشن صفحه بارگذاری -->
+    <!-- صفحه بارگذاری (با انیمیشن‌ها) -->
     <div id="loading-screen">
-        <div class="animated-text">این تنها شانس شما برای درآمد دلاریست</div>
+        <div class="animated-text">This is your only chance for Dollar income</div>
         <div class="dollar">$1</div>
         <div class="powered-text">Powered by AirdropBeFarsi</div>
     </div>
 
-    <!-- صفحه اصلی (که بعد از انیمیشن نمایش داده می‌شود) -->
-    <div id="main-content" style="display: none;">
+    <!-- صفحه اصلی -->
+    <div id="main-content">
         <h1>𝙰𝙱𝙵</h1>
         <p>Choose an option:</p>
         <div class="button-container">
@@ -142,7 +149,7 @@
     </div>
 
     <script>
-        // بعد از 5 ثانیه انیمیشن‌ها تمام می‌شوند و صفحه اصلی نمایش داده می‌شود
+        // بعد از ۵ ثانیه انیمیشن‌ها تمام می‌شوند و صفحه اصلی نمایش داده می‌شود
         setTimeout(() => {
             document.getElementById("loading-screen").style.display = "none";  // مخفی کردن صفحه بارگذاری
             document.getElementById("main-content").style.display = "block";   // نمایش صفحه اصلی
