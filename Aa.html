@@ -19,8 +19,7 @@
         }
         h1 {
             margin: 20px 0;
-            font-size: 2rem;
-            font-weight: bold;
+            font-size: 1.8rem;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
         }
         ul {
@@ -30,22 +29,21 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            margin: 20px 0;
         }
         li {
             margin: 10px;
-            width: 45%;
+            width: 40%;
             box-sizing: border-box;
         }
         a {
             display: block;
-            padding: 12px 18px;
-            border-radius: 12px;
+            padding: 8px 12px;
+            border-radius: 8px;
             background-color: #4caf50;
             color: white;
             text-decoration: none;
             text-align: center;
-            font-size: 1rem;
+            font-size: 0.9rem;
             transition: all 0.3s ease-in-out;
         }
         a:hover {
@@ -53,7 +51,7 @@
             transform: translateY(-2px);
         }
         .button {
-            padding: 12px 25px;
+            padding: 10px 20px;
             background: linear-gradient(45deg, #ff5722, #ff9800);
             color: white;
             border: none;
@@ -69,15 +67,17 @@
         }
         footer {
             margin-top: auto;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             color: rgba(255, 255, 255, 0.7);
             text-align: center;
-            padding: 10px 0;
         }
-        footer p {
-            font-size: 1rem;
-            font-weight: 600;
+        footer a {
             color: #80d0c7;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -104,7 +104,7 @@
         <button class="button" onclick="history.back()">Go Back</button>
     </div>
     <footer>
-        <p>Powered By AirdropBeFarsi</p>
+        Powered By <a href="https://t.me/AirdropBeFarsi" target="_blank">AirdropBeFarsi</a>
     </footer>
 </body>
 </html>
