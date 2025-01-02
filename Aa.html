@@ -79,58 +79,6 @@
         footer a:hover {
             text-decoration: underline;
         }
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.7);
-            justify-content: center;
-            align-items: center;
-        }
-        .modal-content {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 10px;
-            width: 80%;
-            max-width: 500px;
-            color: #000000;
-            text-align: left;
-            overflow-y: auto;
-            max-height: 80vh;
-        }
-        .modal-content h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .modal-content ul {
-            list-style: none;
-            padding: 0;
-        }
-        .modal-content li {
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .modal-content input[type="checkbox"] {
-            transform: scale(1.2);
-        }
-        .modal-footer {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .modal-footer .button {
-            background-color: #4caf50;
-            color: white;
-        }
-        .modal-footer .button:hover {
-            background-color: #3e8e41;
-        }
     </style>
 </head>
 <body>
@@ -154,54 +102,41 @@
     </ul>
     <div>
         <button class="button" onclick="history.back()">Go Back</button>
-        <button class="button" onclick="openModal()">Select For Open</button>
+        <button class="button" onclick="openSequentially()">Open Airdrops</button>
     </div>
     <footer>
         Powered by <a href="https://t.me/AirdropBeFarsi" target="_blank">AirdropBeFarsi</a>
     </footer>
 
-    <div class="modal" id="selectionModal">
-        <div class="modal-content">
-            <h2>Select Airdrops</h2>
-            <ul>
-                <li><label><input type="checkbox" value="https://t.me/notpixel/app?startapp=f5438078953_s651466"> NotPixel💫</label></li>
-                <li><label><input type="checkbox" value="https://t.me/theYescoin_bot/Yescoin?startapp=gb99w6_AirdropBeFarsi"> YesCoin💫</label></li>
-                <li><label><input type="checkbox" value="https://t.me/CatteaAIbot/gameapp?startapp=r_6_1149244"> Cattea💫</label></li>
-                <li><label><input type="checkbox" value="https://t.me/notcoin_bot?startapp=er_7532231"> Notcoin💫</label></li>
-                <li><label><input type="checkbox" value="https://t.me/blum/app?startapp=tribe_airdropbefarsi-ref_6UAGO8CES1"> Blum💫</label></li>
-                <li><label><input type="checkbox" value="https://t.me/coub/app?startapp=coub__marker_17876379"> Coub💫</label></li>
-                <li><label><input type="checkbox" value="https://t.me/zoo_story_bot/game?startapp=ref5438078953"> Zoo💫</label></li>
-                <li><label><input type="checkbox" value="https://t.me/PAWSOG_bot/PAWS?startapp=OiOzPfZ7"> Paws💫</label></li>
-                <li><label><input type="checkbox" value="http://t.me/memhash_bot/start?startapp=5w4NPG"> Memhash💫</label></li>
-                <li><label><input type="checkbox" value="https://t.me/cexio_tap_bot?startapp=1716280473850462"> Cex</label></li>
-                <li><label><input type="checkbox" value="https://t.me/frogfarmbot/frogfarm?startapp=5438078953"> FrogFarm</label></li>
-                <li><label><input type="checkbox" value="https://t.me/tapswap_mirror_bot?startapp=r_5438078953"> TapSwap</label></li>
-                <li><label><input type="checkbox" value="https://t.me/collection_hunt_bot/start?startapp=referrerId42798570"> Collection Hunt</label></li>
-                <li><label><input type="checkbox" value="https://t.me/playdeckbot/market?startapp=eyJyZWYiOjU0MzgwNzg5NTN9"> Playdeck</label></li>
-                <li><label><input type="checkbox" value="https://t.me/TimeFarmCryptoBot?startapp=6LW6vINvtYrAa585"> TimeFarm</label></li>
-            </ul>
-            <div class="modal-footer">
-                <button class="button" onclick="openSelected()">Open</button>
-                <button class="button" onclick="closeModal()">Cancel</button>
-            </div>
-        </div>
-    </div>
-
     <script>
-        function openModal() {
-            document.getElementById('selectionModal').style.display = 'flex';
-        }
-
-        function closeModal() {
-            document.getElementById('selectionModal').style.display = 'none';
-        }
-
-        function openSelected() {
-            const checkboxes = document.querySelectorAll('.modal-content input[type="checkbox"]:checked');
-            checkboxes.forEach(checkbox => {
-                window.open(checkbox.value, '_blank');
-            });
-            closeModal();
+        function openSequentially() {
+            const links = [
+                "https://t.me/notpixel/app?startapp=f5438078953_s651466",
+                "https://t.me/theYescoin_bot/Yescoin?startapp=gb99w6_AirdropBeFarsi",
+                "https://t.me/CatteaAIbot/gameapp?startapp=r_6_1149244",
+                "https://t.me/notcoin_bot?startapp=er_7532231",
+                "https://t.me/blum/app?startapp=tribe_airdropbefarsi-ref_6UAGO8CES1",
+                "https://t.me/coub/app?startapp=coub__marker_17876379",
+                "https://t.me/zoo_story_bot/game?startapp=ref5438078953",
+                "https://t.me/PAWSOG_bot/PAWS?startapp=OiOzPfZ7",
+                "http://t.me/memhash_bot/start?startapp=5w4NPG",
+                "https://t.me/cexio_tap_bot?startapp=1716280473850462",
+                "https://t.me/frogfarmbot/frogfarm?startapp=5438078953",
+                "https://t.me/tapswap_mirror_bot?startapp=r_5438078953",
+                "https://t.me/collection_hunt_bot/start?startapp=referrerId42798570",
+                "https://t.me/playdeckbot/market?startapp=eyJyZWYiOjU0MzgwNzg5NTN9",
+                "https://t.me/TimeFarmCryptoBot?startapp=6LW6vINvtYrAa585"
+            ];
+            
+            let index = 0;
+            const interval = setInterval(() => {
+                if (index >= links.length) {
+                    clearInterval(interval);
+                } else {
+                    window.open(links[index], '_blank');
+                    index++;
+                }
+            }, 1000); // Open each link every 1 second
         }
     </script>
 </body>
