@@ -3,49 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>لیست قابل کلیک</title>
+    <title>لیست ایردراپ‌ها</title>
     <style>
         body {
-            background-image: url('Picsart_25-01-01_23-03-18-152.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            color: #00FF00;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: #ffffff;
             font-family: 'Arial', sans-serif;
             text-align: center;
             margin: 0;
             height: 100vh;
-            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-y: auto;
+        }
+        h1 {
+            margin: 20px 0;
+            font-size: 2rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
         }
         ul {
             list-style-type: none;
             padding: 0;
+            width: 90%;
             display: flex;
-            flex-wrap: wrap; /* اجازه می‌دهد تا عناصر در ردیف‌های جدید قرار گیرند */
-            justify-content: center; /* عناصر را در وسط صفحه قرار می‌دهد */
+            flex-wrap: wrap;
+            justify-content: center;
         }
         li {
             margin: 10px;
-            width: 38%; /* عرض هر آیتم 48% از عرض صفحه (دو آیتم در هر ردیف) */
-            box-sizing: border-box; /* برای جلوگیری از افزایش اندازه با padding */
+            width: 40%;
+            box-sizing: border-box;
         }
         a {
-            display: block; /* نمایش به صورت بلوک */
-            padding: 10px 15px;
-            border-radius: 5px;
-            background-color: #4caf50; /* رنگ سبز */
+            display: block;
+            padding: 12px 20px;
+            border-radius: 8px;
+            background-color: #4caf50;
             color: white;
             text-decoration: none;
-            transition: background-color 0.3s;
             text-align: center;
+            transition: all 0.3s ease-in-out;
         }
         a:hover {
-            background-color: #45a049; /* رنگ سبز تیره‌تر در حالت هاور */
+            background-color: #3e8e41;
+            transform: translateY(-2px);
+        }
+        .button {
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #ff5722, #ff9800);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 15px;
+            transition: all 0.3s ease-in-out;
+        }
+        .button:hover {
+            background: linear-gradient(45deg, #e64a19, #ff5722);
+            transform: translateY(-2px);
+        }
+        footer {
+            margin-top: auto;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        footer a {
+            color: #80d0c7;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <h1>-Airdrops-</h1>
+    <h1>Valid Airdrops</h1>
     <ul>
         <li><a href="https://t.me/notpixel/app?startapp=f5438078953_s651466">NotPixel💫</a></li>
         <li><a href="https://t.me/theYescoin_bot/Yescoin?startapp=gb99w6_AirdropBeFarsi">YesCoin💫</a></li>
@@ -63,5 +98,18 @@
         <li><a href="https://t.me/playdeckbot/market?startapp=eyJyZWYiOjU0MzgwNzg5NTN9">Playdeck</a></li>
         <li><a href="https://t.me/TimeFarmCryptoBot?startapp=6LW6vINvtYrAa585">TimeFarm</a></li>
     </ul>
+    <div>
+        <button class="button" onclick="history.back()">بازگشت</button>
+        <button class="button" onclick="openAll()">Open All</button>
+    </div>
+    <footer>
+        Powered By <a href="https://t.me/AirdropBeFarsi" target="_blank">AirdropBeFarsi</a>
+    </footer>
+    <script>
+        function openAll() {
+            const links = document.querySelectorAll('ul li a');
+            links.forEach(link => window.open(link.href, '_blank'));
+        }
+    </script>
 </body>
 </html>
