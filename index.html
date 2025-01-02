@@ -1,105 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MiniApps ABF</title>
-  <style>
-    /* تنظیمات کلی */
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #1a1a1d, #4e4e50);
-      color: #fff;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-      transition: opacity 0.5s ease-in-out;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABF App</title>
+    <style>
+        body {
+            background-image: url('Picsart_25-01-01_23-03-18-152.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #00FF00;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            height: 100vh;
+            width: 100vw;
+            transition: opacity 0.5s ease;
+        }
 
-    body.fade-out {
-      opacity: 0;
-    }
+        /* انیمیشن fade-out برای محو شدن صفحه */
+        body.fade-out {
+            opacity: 0;
+        }
 
-    .menu-container {
-      text-align: center;
-      animation: fadeIn 1s ease-in-out;
-    }
+        h1 {
+            font-size: 3rem;
+            margin-top: 20px;
+        }
 
-    .title {
-      font-size: 3rem;
-      color: #39ff14;
-      margin-bottom: 0.5rem;
-      text-shadow: 0 0 10px #39ff14;
-    }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
 
-    .subtitle {
-      font-size: 1.2rem;
-      color: #ccc;
-      margin-bottom: 2rem;
-    }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
 
-    .buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
+        .button {
+            padding: 12px 24px;
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 180px; /* اندازه ثابت برای دکمه‌ها */
+            margin: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* سایه برای جذابیت بیشتر */
+        }
 
-    .menu-btn {
-      background: linear-gradient(90deg, #6a11cb, #2575fc);
-      border: none;
-      color: white;
-      padding: 1rem 2rem;
-      font-size: 1.2rem;
-      border-radius: 15px;
-      cursor: pointer;
-      transition: transform 0.3s, box-shadow 0.3s;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    }
+        .button:hover {
+            transform: scale(1.05); /* بزرگتر شدن دکمه هنگام هاور */
+            background: linear-gradient(45deg, #2575fc, #6a11cb); /* معکوس شدن گرادیان */
+        }
 
-    .menu-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
-    }
-
-    .menu-btn:active {
-      transform: scale(0.95);
-      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-  </style>
+        /* انیمیشن fadeIn برای ورود صفحه */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="menu-container">
-    <h1 class="title">ABF</h1>
-    <p class="subtitle">Choose an option:</p>
-    <div class="buttons">
-      <button class="menu-btn" onclick="navigateTo('exchange.html')">💵 Exchange</button>
-      <button class="menu-btn" onclick="navigateTo('tonkeeper.html')">💎 TonKeeper</button>
-      <button class="menu-btn" onclick="navigateTo('airdrops.html')">🔍 Airdrops</button>
-      <button class="menu-btn" onclick="navigateTo('chatgpt.html')">✨ ChatGPT</button>
-      <button class="menu-btn" onclick="navigateTo('blumclicker.html')">💥 BlumClicker</button>
-      <button class="menu-btn" onclick="navigateTo('trade.html')">♻️ Trade</button>
+    <h1>𝙰𝙱𝙵</h1>
+    <p>Choose an option:</p>
+    <div class="button-container">
+        <button class="button" onclick="navigateTo('omp.html')">💸Exchange</button>
+        <button class="button" onclick="navigateTo('tonkeeper.html')">💎TonKeeper</button>
+        <button class="button" onclick="navigateTo('Aa.html')">🔎Airdrops</button>
+        <button class="button" onclick="navigateTo('Bb.html')">🌟ChatGPT</button>
+        <button class="button" onclick="navigateTo('Blum.html')">💥BlumClicker</button>
+        <button class="button" onclick="navigateTo('Tradingview.Html')">♻️Trade</button>
     </div>
-  </div>
 
-  <script>
-    function navigateTo(page) {
-      document.body.classList.add('fade-out');
-      setTimeout(() => {
-        window.location.href = page;
-      }, 500);
-    }
-  </script>
+    <script>
+        function navigateTo(page) {
+            // اضافه کردن کلاس fade-out برای محو شدن صفحه قبل از تغییر
+            document.body.classList.add('fade-out');
+            // بعد از 500 میلی ثانیه صفحه را تغییر دهید
+            setTimeout(() => {
+                window.location.href = page;
+            }, 500); // مدت زمان انیمیشن
+        }
+
+        // اضافه کردن انیمیشن fadeIn برای بارگذاری صفحه
+        document.body.style.animation = "fadeIn 1s ease-in-out";
+    </script>
 </body>
 </html>
