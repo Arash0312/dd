@@ -6,32 +6,64 @@
     <title>ورود به تونی‌کیپر</title>
     <style>
         body {
-            background-image: url('Picsart_24-10-27_23-32-37-681.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            color: #00FF00;
-            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #00264d, #004d99);
+            color: #ffffff;
+            font-family: 'Vazirmatn', Arial, sans-serif;
             text-align: center;
             margin: 0;
             height: 100vh;
-            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 8px rgba(0, 255, 255, 0.7);
         }
         .button {
-            padding: 10px 20px;
-            background-color: #00FF00;
-            color: black;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #00ff99, #00ccff);
+            color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 50px;
+            box-shadow: 0px 4px 15px rgba(0, 255, 255, 0.4);
             cursor: pointer;
-            font-size: 16px;
-            margin-top: 20px;
+            font-size: 18px;
+            margin: 15px;
+            transition: all 0.3s ease-in-out;
+        }
+        .button:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 6px 20px rgba(0, 255, 255, 0.6);
+        }
+        .button:active {
+            transform: scale(0.95);
+        }
+        footer {
+            position: absolute;
+            bottom: 10px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        footer a {
+            color: #00ffcc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <h1>Omp ورود به</h1>
-    <button class="button" onclick="window.location.href='https://omp.exchange/referral/MOM1BBLY3'">Omp ورود به</button>
+    <h1>ورود به Omp</h1>
+    <button class="button" onclick="window.location.href='https://omp.exchange/referral/MOM1BBLY3'">ورود به Omp</button>
     <button class="button" onclick="history.back()">بازگشت به مراحل قبلی</button>
+    <footer>
+        Powered By <a href="https://t.me/AirdropBeFarsi" target="_blank">AirdropBeFarsi</a>
+    </footer>
 </body>
 </html>
