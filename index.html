@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loading Page</title>
     <style>
-        /* Styles for the loading page */
+        /* تنظیمات عمومی صفحه */
         body, html {
             margin: 0;
             padding: 0;
@@ -13,24 +13,16 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #1a1a1a; /* Darker background */
-            font-family: 'Arial', sans-serif;
+            background-color: #1a1a1a; /* پس‌زمینه تیره */
+            font-family: 'Courier New', Courier, monospace; /* فونت تایپ‌نویسی */
             color: #ecf0f1;
             text-align: center;
         }
 
         .loader-container {
-            position: relative;
-            width: 300px;
-            height: 300px;
-            background: linear-gradient(135deg, #3498db, #2ecc71);
-            border-radius: 50%;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
             display: flex;
-            justify-content: center;
-            align-items: center;
             flex-direction: column;
-            padding: 20px;
+            align-items: center;
         }
 
         .loader {
@@ -68,9 +60,25 @@
         }
 
         .powered-by {
-            font-size: 14px;
+            font-size: 18px;
             color: #ecf0f1;
-            font-style: italic;
+            opacity: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid #ecf0f1;
+            width: 0ch;
+            animation: typing 2s steps(22) forwards, blink-caret 0.75s step-end infinite;
+            animation-delay: 3s, 3s;
+        }
+
+        @keyframes typing {
+            from { width: 0ch; }
+            to { width: 22ch; }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #ecf0f1; }
         }
     </style>
 </head>
@@ -84,14 +92,14 @@
             💵
         </div>
         <div class="powered-by">
-            <span>Powered by AirdropBeFarsi</span>
+            Powered by AirdropBeFarsi
         </div>
     </div>
 
     <script>
-        // After 5 seconds, redirect to the main page
+        // هدایت به صفحه اصلی پس از 5 ثانیه
         setTimeout(function() {
-            window.location.href = 'dex.html';
+            window.location.href = 'index.html';
         }, 5000);
     </script>
 </body>
