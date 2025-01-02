@@ -102,42 +102,9 @@
     </ul>
     <div>
         <button class="button" onclick="history.back()">Go Back</button>
-        <button class="button" onclick="openSequentially()">Open Airdrops</button>
     </div>
     <footer>
         Powered by <a href="https://t.me/AirdropBeFarsi" target="_blank">AirdropBeFarsi</a>
     </footer>
-
-    <script>
-        function openSequentially() {
-            const links = [
-                "https://t.me/notpixel/app?startapp=f5438078953_s651466",
-                "https://t.me/theYescoin_bot/Yescoin?startapp=gb99w6_AirdropBeFarsi",
-                "https://t.me/CatteaAIbot/gameapp?startapp=r_6_1149244",
-                "https://t.me/notcoin_bot?startapp=er_7532231",
-                "https://t.me/blum/app?startapp=tribe_airdropbefarsi-ref_6UAGO8CES1",
-                "https://t.me/coub/app?startapp=coub__marker_17876379",
-                "https://t.me/zoo_story_bot/game?startapp=ref5438078953",
-                "https://t.me/PAWSOG_bot/PAWS?startapp=OiOzPfZ7",
-                "http://t.me/memhash_bot/start?startapp=5w4NPG",
-                "https://t.me/cexio_tap_bot?startapp=1716280473850462",
-                "https://t.me/frogfarmbot/frogfarm?startapp=5438078953",
-                "https://t.me/tapswap_mirror_bot?startapp=r_5438078953",
-                "https://t.me/collection_hunt_bot/start?startapp=referrerId42798570",
-                "https://t.me/playdeckbot/market?startapp=eyJyZWYiOjU0MzgwNzg5NTN9",
-                "https://t.me/TimeFarmCryptoBot?startapp=6LW6vINvtYrAa585"
-            ];
-            
-            let index = 0;
-            const interval = setInterval(() => {
-                if (index >= links.length) {
-                    clearInterval(interval);
-                } else {
-                    window.open(links[index], '_blank');
-                    index++;
-                }
-            }, 1000); // Open each link every 1 second
-        }
-    </script>
 </body>
 </html>
