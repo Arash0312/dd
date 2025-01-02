@@ -3,81 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autoclicker Warning</title>
+    <title>هشدار استفاده از اتوکلیکر</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            padding: 20px;
-            background: linear-gradient(to right, #f0f8ff, #e6e6fa);
-            color: #333;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
             text-align: center;
+            background: linear-gradient(to bottom right, #f7f7f7, #d7e8ff);
+            color: #333;
+            line-height: 1.8;
         }
-        h1, h2 {
-            color: #4b0082;
+        h1 {
+            color: #ff5733;
+            margin-top: 20px;
+            font-size: 1.8em;
         }
         .warning {
-            color: #ff5733;
             font-size: 1.2em;
-            margin: 20px 0;
+            margin: 20px 10px;
+            padding: 20px;
+            background-color: #fff7e6;
+            border: 2px solid #ffd54f;
+            border-radius: 8px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .button:hover {
+            background-color: #45a049;
         }
         .hidden {
             display: none;
         }
-        .button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 1.1em;
-            margin-top: 20px;
-        }
-        .button:disabled {
-            background-color: #ddd;
-            cursor: not-allowed;
+        .checkbox-container {
+            margin: 20px;
         }
         .footer {
             margin-top: 30px;
             padding: 10px;
-            border-top: 1px solid #ccc;
-            text-align: center;
+            background-color: #f1f1f1;
+            border-top: 1px solid #ddd;
         }
-        .checkbox-container {
-            margin: 20px 0;
-            font-size: 1.1em;
+        .footer a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <h1>⚠️ هشدار استفاده از اتوکلیکر / Autoclicker Warning ⚠️</h1>
-
+    
     <div class="warning">
-        ⚠️ استفاده از اتوکلیکر می‌تواند موجب بن شدن شما از پروژه شود. مسئولیت تمام اتفاقات با خود شماست، همان‌طور که سود استفاده از آن نیز متعلق به شماست.  
-        <br>تیم ایردراپ به فارسی هشدارهای لازم را داده است. شما عقل دارید و خودتان به عمل خود آگاه هستید! هرگونه توهین به سازنده پیگرد قانونی دارد.
-        <br><br>
-        ⚠️ Using an autoclicker may result in being banned. You are responsible for any consequences, and any profits are yours.  
-        <br>The Airdrop team has given all necessary warnings. You are aware of your actions. Any insult to the developer will be legally prosecuted.
+        ⚠️ استفاده از اتوکلیکر می‌تواند موجب بن شدن شما شود. مسئولیت تمام اتفاقات با شماست.  
+        <br>⚠️ Using an autoclicker may result in being banned. You are fully responsible for any consequences.
     </div>
-
+    
     <div class="checkbox-container">
         <label>
-            <input type="checkbox" id="agreeCheckbox"> من ریسک‌های مربوط به بن شدن را درک کرده‌ام / I understand the risks of being banned.
+            <input type="checkbox" id="agreeCheckbox"> 
+            من تمام ریسک‌ها را پذیرفته‌ام / I have accepted all risks
         </label>
     </div>
     
     <button id="confirmButton" class="button" disabled>تایید / Confirm</button>
-
+    
     <div id="linkContainer" class="hidden">
-        <h2>لینک اتوکلیکر بلوم / Autoclicker Link:</h2>
-        <a href="https://github.com/Aaaa778s/Blumne/raw/main/blum-autoclicker.user.js" target="_blank" class="button">دریافت اتوکلیکر / Download Autoclicker</a>
-        <h3>آموزش / Instructions:</h3>
-        <a href="https://t.me/AirdropBeFarsi/12102" target="_blank" class="button">لینک آموزش / Instruction Link</a>
+        <h2>لینک دریافت اتوکلیکر / Autoclicker Link</h2>
+        <a href="https://github.com/Aaaa778s/Blumne/raw/main/blum-autoclicker.user.js" target="_blank" class="button">دانلود / Download</a>
+        <h3>آموزش / Instructions</h3>
+        <a href="https://t.me/AirdropBeFarsi/12102" target="_blank" class="button">مشاهده آموزش / View Instructions</a>
     </div>
-
+    
     <div class="footer">
-        <p>⚠️ تیم ایردراپ به فارسی هیچ‌گونه مسئولیتی در قبال استفاده از این ابزار ندارد. / The Airdrop team is not responsible for any issues caused by using this tool.</p>
+        <p>⚠️ تیم ایردراپ به فارسی مسئولیتی در قبال استفاده از این ابزار ندارد.  
+        <br>⚠️ The Airdrop team is not responsible for the use of this tool.</p>
+        <p>Powered By <a href="https://t.me/AirdropBeFarsi" target="_blank">AirdropBeFarsi</a></p>
     </div>
 
     <script>
