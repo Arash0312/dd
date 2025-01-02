@@ -4,110 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ABF App</title>
-    <!-- اضافه کردن فونت‌های فارسی و انگلیسی -->
-    <link href="https://fonts.googleapis.com/css2?family=Vazir&family=Roboto&display=swap" rel="stylesheet">
     <style>
-        /* استایل برای صفحه بارگذاری */
-        #loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
-
-        /* انیمیشن برای متن */
-        .animated-text {
-            font-size: 2.5rem;
-            animation: slideIn 3s ease-in-out forwards;
-            white-space: nowrap;
-            overflow: hidden;
-            border-right: 4px solid white;
-            display: inline-block;
-            padding-right: 5px;
-            margin-bottom: 20px;
-        }
-
-        /* انیمیشن برای ورود متن */
-        @keyframes slideIn {
-            from {
-                width: 0;
-            }
-            to {
-                width: 100%;
-            }
-        }
-
-        /* انیمیشن برای دلار */
-        .dollar {
-            font-size: 5rem;
-            margin-top: 20px;
-            opacity: 0;
-            animation: fadeIn 2s ease-in-out 3s forwards;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* انیمیشن برای "Powered by AirdropBeFarsi" */
-        .powered-text {
-            font-size: 1.2rem;
-            margin-top: 30px;
-            opacity: 0;
-            animation: slideInLeft 3s ease-in-out 5s forwards;
-        }
-
-        @keyframes slideInLeft {
-            from {
-                transform: translateX(-100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-
-        /* استایل برای صفحه اصلی */
         body {
             background-image: url('Picsart_25-01-01_23-03-18-152.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            color: white;
-            font-family: 'Roboto', sans-serif;
+            color: #00FF00;
+            font-family: 'Arial', sans-serif;
             text-align: center;
             margin: 0;
             height: 100vh;
             width: 100vw;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            overflow: hidden;
-            opacity: 0;
-            animation: fadeInPage 1s ease-in-out 5s forwards;
+            transition: opacity 0.5s ease;
         }
 
-        /* انیمیشن برای ورود به صفحه اصلی */
-        @keyframes fadeInPage {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+        /* انیمیشن fade-out برای محو شدن صفحه */
+        body.fade-out {
+            opacity: 0;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-top: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
         }
 
         .button-container {
@@ -125,53 +49,52 @@
             border-radius: 8px;
             cursor: pointer;
             font-size: 16px;
-            width: 180px;
+            width: 180px; /* اندازه ثابت برای دکمه‌ها */
             margin: 10px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* سایه برای جذابیت بیشتر */
         }
 
         .button:hover {
-            transform: scale(1.05);
-            background: linear-gradient(45deg, #2575fc, #6a11cb);
+            transform: scale(1.05); /* بزرگتر شدن دکمه هنگام هاور */
+            background: linear-gradient(45deg, #2575fc, #6a11cb); /* معکوس شدن گرادیان */
+        }
+
+        /* انیمیشن fadeIn برای ورود صفحه */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- صفحه بارگذاری -->
-    <div id="loading-screen">
-        <div>
-            <div class="animated-text">This is your only chance for Dollar income</div>
-            <div class="dollar">$1</div>
-            <div class="powered-text">Powered by AirdropBeFarsi</div>
-        </div>
-    </div>
-
-    <!-- صفحه اصلی -->
-    <div id="main-content">
-        <h1>𝙰𝙱𝙵</h1>
-        <p>Choose an option:</p>
-        <div class="button-container">
-            <button class="button" onclick="navigateTo('omp.html')">💸Exchange</button>
-            <button class="button" onclick="navigateTo('tonkeeper.html')">💎TonKeeper</button>
-            <button class="button" onclick="navigateTo('Aa.html')">🔎Airdrops</button>
-            <button class="button" onclick="navigateTo('Bb.html')">🌟ChatGPT</button>
-            <button class="button" onclick="navigateTo('Blum.html')">💥BlumClicker</button>
-            <button class="button" onclick="navigateTo('Tradingview.Html')">♻️Trade</button>
-        </div>
+    <h1>𝙰𝙱𝙵</h1>
+    <p>Choose an option:</p>
+    <div class="button-container">
+        <button class="button" onclick="navigateTo('omp.html')">💸Exchange</button>
+        <button class="button" onclick="navigateTo('tonkeeper.html')">💎TonKeeper</button>
+        <button class="button" onclick="navigateTo('Aa.html')">🔎Airdrops</button>
+        <button class="button" onclick="navigateTo('Bb.html')">🌟ChatGPT</button>
+        <button class="button" onclick="navigateTo('Blum.html')">💥BlumClicker</button>
+        <button class="button" onclick="navigateTo('Tradingview.Html')">♻️Trade</button>
     </div>
 
     <script>
-        // بعد از ۵ ثانیه، صفحه بارگذاری مخفی می‌شود و صفحه اصلی نمایش داده می‌شود
-        setTimeout(() => {
-            document.getElementById("loading-screen").style.display = "none";
-            document.getElementById("main-content").style.display = "block";
-        }, 5000);
-
-        // تابع برای هدایت به صفحات دیگر
         function navigateTo(page) {
-            window.location.href = page;
+            // اضافه کردن کلاس fade-out برای محو شدن صفحه قبل از تغییر
+            document.body.classList.add('fade-out');
+            // بعد از 500 میلی ثانیه صفحه را تغییر دهید
+            setTimeout(() => {
+                window.location.href = page;
+            }, 500); // مدت زمان انیمیشن
         }
+
+        // اضافه کردن انیمیشن fadeIn برای بارگذاری صفحه
+        document.body.style.animation = "fadeIn 1s ease-in-out";
     </script>
 </body>
 </html>
