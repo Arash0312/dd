@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>خطرات اتوکلیکر بلوم</title>
+    <title>Autoclicker Warning</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,54 +11,73 @@
             padding: 20px;
             background: linear-gradient(to right, #f0f8ff, #e6e6fa);
             color: #333;
+            text-align: center;
         }
         h1, h2 {
             color: #4b0082;
         }
-        ul {
-            list-style-type: square;
+        .warning {
+            color: #ff5733;
+            font-size: 1.2em;
+            margin: 20px 0;
         }
         .hidden {
             display: none;
         }
-        .footer {
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1.1em;
             margin-top: 20px;
+        }
+        .button:disabled {
+            background-color: #ddd;
+            cursor: not-allowed;
+        }
+        .footer {
+            margin-top: 30px;
             padding: 10px;
             border-top: 1px solid #ccc;
             text-align: center;
         }
+        .checkbox-container {
+            margin: 20px 0;
+            font-size: 1.1em;
+        }
     </style>
 </head>
 <body>
-    <h1>خطر بن شدن با اتوکلیکر بلوم</h1>
-    <p>استفاده از اتوکلیکر بلوم می‌تواند خطراتی به همراه داشته باشد. مهم‌ترین خطر، احتمال <strong>بن شدن</strong> حساب کاربری شما در پروژه‌های مختلف است. ⚠️</p>
-    <p>برخی از پروژه‌ها قوانین سخت‌گیرانه‌ای دارند که استفاده از ابزارهای خودکار مانند اتوکلیکرها را ممنوع می‌کنند. عدم رعایت این قوانین ممکن است منجر به اقدامات انضباطی علیه حساب کاربری شما شود. لذا قبل از استفاده از این ابزار، توصیه می‌شود:</p>
-    <ul>
-        <li>قوانین و مقررات پروژه‌ها را با دقت مطالعه کنید.</li>
-        <li>ریسک‌های مرتبط با استفاده از اتوکلیکر را بسنجید.</li>
-        <li>در صورت شک و تردید، از استفاده از اتوکلیکر خودداری کنید.</li>
-    </ul>
-    <p>توجه داشته باشید که تیم ایردراپ به فارسی هیچ‌گونه مسئولیتی در قبال مشکلات ناشی از استفاده از اتوکلیکر بلوم قبول نمی‌کند. ❌</p>
+    <h1>⚠️ هشدار استفاده از اتوکلیکر / Autoclicker Warning ⚠️</h1>
 
-    <h2>تایید استفاده از اتوکلیکر</h2>
-    <label>
-        <input type="checkbox" id="agreeCheckbox"> من ریسک‌های مربوط به بن شدن را درک کرده‌ام.
-    </label>
-    <br><br>
-    <button id="confirmButton" disabled>تایید</button>
-
-    <div id="linkContainer" class="hidden">
-        <h3>لینک اتوکلیکر بلوم:</h3>
-        <a href="https://github.com/Aaaa778s/Blumne/raw/main/blum-autoclicker.user.js" target="_blank">https://github.com/Aaaa778s/Blumne/raw/main/blum-autoclicker.user.js</a>
+    <div class="warning">
+        ⚠️ استفاده از اتوکلیکر می‌تواند موجب بن شدن شما از پروژه شود. مسئولیت تمام اتفاقات با خود شماست، همان‌طور که سود استفاده از آن نیز متعلق به شماست.  
+        <br>تیم ایردراپ به فارسی هشدارهای لازم را داده است. شما عقل دارید و خودتان به عمل خود آگاه هستید! هرگونه توهین به سازنده پیگرد قانونی دارد.
+        <br><br>
+        ⚠️ Using an autoclicker may result in being banned. You are responsible for any consequences, and any profits are yours.  
+        <br>The Airdrop team has given all necessary warnings. You are aware of your actions. Any insult to the developer will be legally prosecuted.
     </div>
 
-    <div>
-        <h3>آموزش:</h3>
-        <a href="https://t.me/AirdropBeFarsi/12102" target="_blank">لینک آموزش</a>
+    <div class="checkbox-container">
+        <label>
+            <input type="checkbox" id="agreeCheckbox"> من ریسک‌های مربوط به بن شدن را درک کرده‌ام / I understand the risks of being banned.
+        </label>
+    </div>
+    
+    <button id="confirmButton" class="button" disabled>تایید / Confirm</button>
+
+    <div id="linkContainer" class="hidden">
+        <h2>لینک اتوکلیکر بلوم / Autoclicker Link:</h2>
+        <a href="https://github.com/Aaaa778s/Blumne/raw/main/blum-autoclicker.user.js" target="_blank" class="button">دریافت اتوکلیکر / Download Autoclicker</a>
+        <h3>آموزش / Instructions:</h3>
+        <a href="https://t.me/AirdropBeFarsi/12102" target="_blank" class="button">لینک آموزش / Instruction Link</a>
     </div>
 
     <div class="footer">
-        <p>تیم ایردراپ به فارسی هیچ‌گونه مسئولیتی در قبال استفاده از این ابزار ندارد.</p>
+        <p>⚠️ تیم ایردراپ به فارسی هیچ‌گونه مسئولیتی در قبال استفاده از این ابزار ندارد. / The Airdrop team is not responsible for any issues caused by using this tool.</p>
     </div>
 
     <script>
