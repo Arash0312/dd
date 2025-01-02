@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,23 +7,18 @@
     <!-- اضافه کردن فونت‌های فارسی و انگلیسی -->
     <link href="https://fonts.googleapis.com/css2?family=Vazir&family=Roboto&display=swap" rel="stylesheet">
     <style>
-        /* کلیات استایل صفحه */
-        body {
-            background-image: url('Picsart_25-01-01_23-03-18-152.jpg'); /* تصویر پس زمینه */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            color: white;
-            font-family: 'Roboto', sans-serif;
-            text-align: center;
-            margin: 0;
-            height: 100vh;
-            width: 100vw;
+        /* استایل برای صفحه بارگذاری */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
-            overflow: hidden;
+            z-index: 9999;
         }
 
         /* انیمیشن برای متن */
@@ -50,7 +45,7 @@
 
         /* انیمیشن برای دلار */
         .dollar {
-            font-size: 5rem; /* اندازه دلار به اندازه کافی بزرگ باشد */
+            font-size: 5rem;
             margin-top: 20px;
             opacity: 0;
             animation: fadeIn 2s ease-in-out 3s forwards;
@@ -84,9 +79,35 @@
             }
         }
 
-        /* استایل برای صفحه اصلی (دکمه‌ها و سایر محتوا) */
-        #main-content {
-            display: none; /* صفحه اصلی مخفی می‌شود */
+        /* استایل برای صفحه اصلی */
+        body {
+            background-image: url('Picsart_25-01-01_23-03-18-152.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            margin: 0;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+            opacity: 0;
+            animation: fadeInPage 1s ease-in-out 5s forwards;
+        }
+
+        /* انیمیشن برای ورود به صفحه اصلی */
+        @keyframes fadeInPage {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
 
         .button-container {
@@ -114,24 +135,16 @@
             transform: scale(1.05);
             background: linear-gradient(45deg, #2575fc, #6a11cb);
         }
-
-        /* انیمیشن fadeIn برای صفحه */
-        @keyframes fadeInPage {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
     </style>
 </head>
 <body>
-    <!-- صفحه بارگذاری (با انیمیشن‌ها) -->
+    <!-- صفحه بارگذاری -->
     <div id="loading-screen">
-        <div class="animated-text">This is your only chance for Dollar income</div>
-        <div class="dollar">$1</div>
-        <div class="powered-text">Powered by AirdropBeFarsi</div>
+        <div>
+            <div class="animated-text">This is your only chance for Dollar income</div>
+            <div class="dollar">$1</div>
+            <div class="powered-text">Powered by AirdropBeFarsi</div>
+        </div>
     </div>
 
     <!-- صفحه اصلی -->
@@ -149,12 +162,11 @@
     </div>
 
     <script>
-        // بعد از ۵ ثانیه انیمیشن‌ها تمام می‌شوند و صفحه اصلی نمایش داده می‌شود
+        // بعد از ۵ ثانیه، صفحه بارگذاری مخفی می‌شود و صفحه اصلی نمایش داده می‌شود
         setTimeout(() => {
-            document.getElementById("loading-screen").style.display = "none";  // مخفی کردن صفحه بارگذاری
-            document.getElementById("main-content").style.display = "block";   // نمایش صفحه اصلی
-            document.body.style.animation = "fadeInPage 1s ease-in-out"; // انیمیشن برای ورود به صفحه اصلی
-        }, 5000); // ۵ ثانیه
+            document.getElementById("loading-screen").style.display = "none";
+            document.getElementById("main-content").style.display = "block";
+        }, 5000);
 
         // تابع برای هدایت به صفحات دیگر
         function navigateTo(page) {
