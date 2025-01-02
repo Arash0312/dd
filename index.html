@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>صفحه لودینگ</title>
+    <title>Loading Page</title>
     <style>
-        /* استایل برای صفحه لودینگ */
+        /* Styles for the loading page */
         body, html {
             margin: 0;
             padding: 0;
@@ -13,12 +13,14 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #f0f0f0;
+            background-color: #2c3e50; /* Dark background */
             font-family: 'Arial', sans-serif;
+            color: #ecf0f1;
+            text-align: center;
         }
 
         .loader-container {
-            text-align: center;
+            position: relative;
         }
 
         .loader {
@@ -39,12 +41,23 @@
         .loader-text {
             margin-top: 20px;
             font-size: 18px;
-            color: #333;
+            color: #ecf0f1;
         }
 
         .loader-text span {
             font-weight: bold;
             color: #3498db;
+        }
+
+        .dollar-sign {
+            font-size: 50px;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
         }
     </style>
 </head>
@@ -52,12 +65,18 @@
     <div class="loader-container">
         <div class="loader"></div>
         <div class="loader-text">
+            <span>This is your last chance for dollar income</span>
+        </div>
+        <div class="dollar-sign">
+            💵
+        </div>
+        <div class="loader-text">
             <span>Powered by AirdropBeFarsi</span>
         </div>
     </div>
 
     <script>
-        // پس از ۵ ثانیه، به صفحه اصلی هدایت می‌شوید
+        // After 5 seconds, redirect to the main page
         setTimeout(function() {
             window.location.href = 'dex.html';
         }, 5000);
