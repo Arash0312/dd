@@ -78,21 +78,17 @@
         <button class="button" onclick="showImage('eth')">ETH Chart</button>
         <button class="button" onclick="showImage('btc')">BTC Chart</button>
         <!-- دکمه Go Back که برای بازگشت به صفحه اصلی استفاده میشود -->
-        <button class="button" onclick="history.back()">Go Back</button>
+        <button id="goBackButton" class="button hidden" onclick="hideImage()">Go Back</button>
     </div>
 
     <!-- ETH Chart Section -->
     <div id="ethImage" class="hidden">
         <img src="Picsart_25-01-03_19-04-31-004.jpg" alt="ETH Chart">
-        <br>
-        <button class="button" onclick="hideImage()">Go Back</button>
     </div>
 
     <!-- BTC Chart Section -->
     <div id="btcImage" class="hidden">
         <img src="Picsart_25-01-03_19-37-08-293.jpg" alt="BTC Chart">
-        <br>
-        <button class="button" onclick="hideImage()">Go Back</button>
     </div>
 
     <footer>
@@ -111,13 +107,6 @@
         }
 
         function hideImage() {
-            document.getElementById('ethImage').classList.add('hidden');
-            document.getElementById('btcImage').classList.add('hidden');
-            document.getElementById('mainButtons').classList.remove('hidden');
-            document.getElementById('goBackButton').classList.add('hidden');  // پنهان کردن دکمه Go Back
-        }
-
-        function goBack() {
             document.getElementById('ethImage').classList.add('hidden');
             document.getElementById('btcImage').classList.add('hidden');
             document.getElementById('mainButtons').classList.remove('hidden');
