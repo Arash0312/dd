@@ -78,7 +78,7 @@
         <button class="button" onclick="showImage('eth')">ETH Chart</button>
         <button class="button" onclick="showImage('btc')">BTC Chart</button>
         <!-- دکمه Go Back که برای بازگشت به صفحه اصلی استفاده میشود -->
-        <button id="goBackButton" class="button hidden" onclick="goBack()">Go Back</button>
+        <button id="goBackButton" class="button hidden" onclick="hideImage()">Go Back</button>
     </div>
 
     <!-- ETH Chart Section -->
@@ -101,18 +101,16 @@
             document.getElementById('goBackButton').classList.remove('hidden');  // نمایش دکمه Go Back
             if (type === 'eth') {
                 document.getElementById('ethImage').classList.remove('hidden');
-                document.getElementById('btcImage').classList.add('hidden');
             } else if (type === 'btc') {
                 document.getElementById('btcImage').classList.remove('hidden');
-                document.getElementById('ethImage').classList.add('hidden');
             }
         }
 
-        function goBack() {
-            document.getElementById('mainButtons').classList.remove('hidden');
-            document.getElementById('goBackButton').classList.add('hidden');  // پنهان کردن دکمه Go Back
+        function hideImage() {
             document.getElementById('ethImage').classList.add('hidden');
             document.getElementById('btcImage').classList.add('hidden');
+            document.getElementById('mainButtons').classList.remove('hidden');
+            document.getElementById('goBackButton').classList.add('hidden');  // پنهان کردن دکمه Go Back
         }
     </script>
 </body>
