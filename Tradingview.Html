@@ -77,7 +77,8 @@
         <button class="button" onclick="window.location.href='https://www.tradingview.com/'">See Chart</button>
         <button class="button" onclick="showImage('eth')">ETH Chart</button>
         <button class="button" onclick="showImage('btc')">BTC Chart</button>
-        <button class="button" onclick="goBack()">Go Back</button> <!-- دکمه Go Back اینجا اضافه شد -->
+        <!-- دکمه Go Back که برای بازگشت به صفحه اصلی استفاده میشود -->
+        <button class="button" onclick="goBack()" id="goBackButton" class="hidden">Go Back</button>
     </div>
 
     <!-- ETH Chart Section -->
@@ -101,6 +102,7 @@
     <script>
         function showImage(type) {
             document.getElementById('mainButtons').classList.add('hidden');
+            document.getElementById('goBackButton').classList.remove('hidden');  // نمایش دکمه Go Back
             if (type === 'eth') {
                 document.getElementById('ethImage').classList.remove('hidden');
             } else if (type === 'btc') {
@@ -112,12 +114,14 @@
             document.getElementById('ethImage').classList.add('hidden');
             document.getElementById('btcImage').classList.add('hidden');
             document.getElementById('mainButtons').classList.remove('hidden');
+            document.getElementById('goBackButton').classList.add('hidden');  // پنهان کردن دکمه Go Back
         }
 
         function goBack() {
             document.getElementById('ethImage').classList.add('hidden');
             document.getElementById('btcImage').classList.add('hidden');
             document.getElementById('mainButtons').classList.remove('hidden');
+            document.getElementById('goBackButton').classList.add('hidden');  // پنهان کردن دکمه Go Back
         }
     </script>
 </body>
