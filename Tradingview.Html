@@ -46,17 +46,15 @@
             transform: scale(0.98);
             box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
         }
-        .image-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            text-decoration: none;
-            color: white;
+        .image {
+            display: none;
+            margin-top: 20px;
         }
-        .image-button img {
-            width: 24px;
-            height: 24px;
+        .image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
         }
         footer {
             position: absolute;
@@ -79,16 +77,25 @@
     <button class="button" onclick="window.location.href='https://www.tradingview.com/'">See Chart</button>
     <button class="button" onclick="history.back()">Go Back</button>
     
-    <!-- دکمه‌های جدید -->
-    <a class="button image-button" href="https://ethereum.org/" target="_blank">
-        <img src="Picsart_25-01-03_19-04-31-004.jpg" alt="ETH"> ETH
-    </a>
-    <a class="button image-button" href="https://bitcoin.org/" target="_blank">
-        <img src="images/btc.png" alt="BTC"> BTC
-    </a>
+    <!-- دکمه نمایش تصویر ETH -->
+    <button class="button" onclick="showImage()">Eth chart</button>
+    <div class="image" id="ethImage">
+        <img src="Picsart_25-01-03_19-04-31-004.jpg" alt="ETH">
+        <button class="button" onclick="hideImage()">Hide Image</button>
+    </div>
 
     <footer>
         Powered By <a href="https://t.me/AirdropBeFarsi" target="_blank">AirdropBeFarsi</a>
     </footer>
+
+    <script>
+        function showImage() {
+            document.getElementById('ethImage').style.display = 'block';
+        }
+
+        function hideImage() {
+            document.getElementById('ethImage').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
