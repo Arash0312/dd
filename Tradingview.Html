@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ETH Chart</title>
+    <title>Crypto Charts</title>
     <style>
         body {
             background: linear-gradient(135deg, #00b894, #0984e3);
@@ -72,15 +72,23 @@
     </style>
 </head>
 <body>
-    <h1>Trade Page</h1>
+    <h1>Crypto Charts</h1>
     <div id="mainButtons">
         <button class="button" onclick="window.location.href='https://www.tradingview.com/'">See Chart</button>
-        <button class="button" onclick="history.back()">Go Back</button>
-        <button class="button" onclick="showImage()">Eth Chart</button>
+        <button class="button" onclick="showImage('eth')">ETH Chart</button>
+        <button class="button" onclick="showImage('btc')">BTC Chart</button>
     </div>
 
+    <!-- ETH Chart Section -->
     <div id="ethImage" class="hidden">
         <img src="Picsart_25-01-03_19-04-31-004.jpg" alt="ETH Chart">
+        <br>
+        <button class="button" onclick="hideImage()">Go Back</button>
+    </div>
+
+    <!-- BTC Chart Section -->
+    <div id="btcImage" class="hidden">
+        <img src="Picsart_25-01-03_19-37-08-293.jpg" alt="BTC Chart">
         <br>
         <button class="button" onclick="hideImage()">Go Back</button>
     </div>
@@ -90,13 +98,18 @@
     </footer>
 
     <script>
-        function showImage() {
+        function showImage(type) {
             document.getElementById('mainButtons').classList.add('hidden');
-            document.getElementById('ethImage').classList.remove('hidden');
+            if (type === 'eth') {
+                document.getElementById('ethImage').classList.remove('hidden');
+            } else if (type === 'btc') {
+                document.getElementById('btcImage').classList.remove('hidden');
+            }
         }
 
         function hideImage() {
             document.getElementById('ethImage').classList.add('hidden');
+            document.getElementById('btcImage').classList.add('hidden');
             document.getElementById('mainButtons').classList.remove('hidden');
         }
     </script>
