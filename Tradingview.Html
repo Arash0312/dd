@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ورود به تونی‌کیپر</title>
+    <title>ETH Chart</title>
     <style>
         body {
             background: linear-gradient(135deg, #00b894, #0984e3);
@@ -46,15 +46,14 @@
             transform: scale(0.98);
             box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
         }
-        .image {
+        .hidden {
             display: none;
-            margin-top: 20px;
         }
-        .image img {
-            max-width: 100%;
+        img {
+            max-width: 80%;
             height: auto;
             border-radius: 10px;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
         }
         footer {
             position: absolute;
@@ -74,14 +73,16 @@
 </head>
 <body>
     <h1>Trade Page</h1>
-    <button class="button" onclick="window.location.href='https://www.tradingview.com/'">See Chart</button>
-    <button class="button" onclick="history.back()">Go Back</button>
-    
-    <!-- دکمه نمایش تصویر ETH -->
-    <button class="button" onclick="showImage()">Eth chart</button>
-    <div class="image" id="ethImage">
-        <img src="Picsart_25-01-03_19-04-31-004.jpg" alt="ETH">
-        <button class="button" onclick="hideImage()">Hide Image</button>
+    <div id="mainButtons">
+        <button class="button" onclick="window.location.href='https://www.tradingview.com/'">See Chart</button>
+        <button class="button" onclick="history.back()">Go Back</button>
+        <button class="button" onclick="showImage()">Eth Chart</button>
+    </div>
+
+    <div id="ethImage" class="hidden">
+        <img src="Picsart_25-01-03_19-04-31-004.jpg" alt="ETH Chart">
+        <br>
+        <button class="button" onclick="hideImage()">Go Back</button>
     </div>
 
     <footer>
@@ -90,11 +91,13 @@
 
     <script>
         function showImage() {
-            document.getElementById('ethImage').style.display = 'block';
+            document.getElementById('mainButtons').classList.add('hidden');
+            document.getElementById('ethImage').classList.remove('hidden');
         }
 
         function hideImage() {
-            document.getElementById('ethImage').style.display = 'none';
+            document.getElementById('ethImage').classList.add('hidden');
+            document.getElementById('mainButtons').classList.remove('hidden');
         }
     </script>
 </body>
