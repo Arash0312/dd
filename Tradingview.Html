@@ -77,6 +77,7 @@
         <button class="button" onclick="window.location.href='https://www.tradingview.com/'">See Chart</button>
         <button class="button" onclick="showImage('eth')">ETH Chart</button>
         <button class="button" onclick="showImage('btc')">BTC Chart</button>
+        <button class="button" onclick="goBack()">Go Back</button> <!-- دکمه Go Back اینجا اضافه شد -->
     </div>
 
     <!-- ETH Chart Section -->
@@ -108,6 +109,12 @@
         }
 
         function hideImage() {
+            document.getElementById('ethImage').classList.add('hidden');
+            document.getElementById('btcImage').classList.add('hidden');
+            document.getElementById('mainButtons').classList.remove('hidden');
+        }
+
+        function goBack() {
             document.getElementById('ethImage').classList.add('hidden');
             document.getElementById('btcImage').classList.add('hidden');
             document.getElementById('mainButtons').classList.remove('hidden');
