@@ -109,10 +109,23 @@
         <button class="button" onclick="showTon()">Ton</button>
         <button class="button" onclick="showPepe()">Pepe</button>
         <br>
-        <img id="tonImage" class="hidden" src="Picsart_25-01-04_17-43-27-756.jpg" alt="Ton Futures Chart">
-        <img id="pepeImage" class="hidden" src="Picsart_25-01-04_21-24-29-611.jpg" alt="Pepe Futures Chart">
-        <br>
         <button class="button" onclick="goBack()">Go Back</button>
+    </div>
+
+    <!-- Ton Section -->
+    <div id="tonSection" class="hidden">
+        <h2>Ton Futures Chart</h2>
+        <img src="Picsart_25-01-04_17-43-27-756.jpg" alt="Ton Futures Chart">
+        <br>
+        <button class="button" onclick="showFutures()">Go Back</button>
+    </div>
+
+    <!-- Pepe Section -->
+    <div id="pepeSection" class="hidden">
+        <h2>Pepe Futures Chart</h2>
+        <img src="Picsart_25-01-04_21-24-29-611.jpg" alt="Pepe Futures Chart">
+        <br>
+        <button class="button" onclick="showFutures()">Go Back</button>
     </div>
 
     <footer>
@@ -122,48 +135,36 @@
     <script>
         function showSpot() {
             document.getElementById('mainButtons').classList.add('hidden');
-            document.getElementById('btcSection').classList.add('hidden');
-            document.getElementById('ethSection').classList.add('hidden');
-            document.getElementById('futuresSection').classList.add('hidden');
             document.getElementById('spotSection').classList.remove('hidden');
         }
 
         function showFutures() {
             document.getElementById('mainButtons').classList.add('hidden');
-            document.getElementById('spotSection').classList.add('hidden');
-            document.getElementById('btcSection').classList.add('hidden');
-            document.getElementById('ethSection').classList.add('hidden');
             document.getElementById('futuresSection').classList.remove('hidden');
         }
 
         function showTon() {
-            document.getElementById('tonImage').classList.remove('hidden');
-            document.getElementById('pepeImage').classList.add('hidden');
+            document.getElementById('futuresSection').classList.add('hidden');
+            document.getElementById('tonSection').classList.remove('hidden');
         }
 
         function showPepe() {
-            document.getElementById('tonImage').classList.add('hidden');
-            document.getElementById('pepeImage').classList.remove('hidden');
+            document.getElementById('futuresSection').classList.add('hidden');
+            document.getElementById('pepeSection').classList.remove('hidden');
         }
 
         function showBTC() {
             document.getElementById('spotSection').classList.add('hidden');
-            document.getElementById('ethSection').classList.add('hidden');
             document.getElementById('btcSection').classList.remove('hidden');
         }
 
         function showETH() {
             document.getElementById('spotSection').classList.add('hidden');
-            document.getElementById('btcSection').classList.add('hidden');
             document.getElementById('ethSection').classList.remove('hidden');
         }
 
         function goBack() {
-            document.getElementById('spotSection').classList.add('hidden');
-            document.getElementById('btcSection').classList.add('hidden');
-            document.getElementById('ethSection').classList.add('hidden');
-            document.getElementById('futuresSection').classList.add('hidden');
-            document.getElementById('mainButtons').classList.remove('hidden');
+            window.history.back();
         }
     </script>
 </body>
