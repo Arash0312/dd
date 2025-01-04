@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,9 +46,6 @@
             transform: scale(0.98);
             box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
         }
-        .hidden {
-            display: none;
-        }
         img {
             max-width: 80%;
             height: auto;
@@ -69,48 +66,35 @@
         footer a:hover {
             text-decoration: underline;
         }
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
     <h1>Crypto Charts</h1>
     <div id="mainButtons">
-        <!-- دکمه‌های انتخاب بخش -->
-        <button class="button" onclick="showSection('spot')">Spot</button>
-        <button class="button" onclick="showSection('futures')">Futures</button>
+        <button class="button" onclick="showSpot()">Spot</button>
+        <button class="button" onclick="showFutures()">Futures</button>
+        <button class="button" onclick="window.location.href='https://www.tradingview.com/'">Chart</button>
+        <button class="button" onclick="goBack()">Go Back</button>
     </div>
 
-    <!-- بخش Spot -->
+    <!-- Spot Section -->
     <div id="spotSection" class="hidden">
-        <h2>Spot Charts</h2>
-        <button class="button" onclick="showImage('eth')">ETH Chart Spot</button>
-        <button class="button" onclick="showImage('btc')">BTC Chart Spot</button>
-        <button class="button" onclick="goBack()">Go Back</button>
+        <h2>Spot Prices</h2>
+        <img src="Picsart_25-01-03_19-04-31-004.jpg" alt="ETH Spot Chart">
+        <img src="Picsart_25-01-03_19-37-08-293.jpg" alt="BTC Spot Chart">
+        <br>
+        <button class="button" onclick="hideSections()">Go Back</button>
     </div>
 
-    <!-- بخش Futures -->
+    <!-- Futures Section -->
     <div id="futuresSection" class="hidden">
-        <h2>Futures Charts</h2>
-        <button class="button" onclick="showImage('Ton')">Ton Chart Futures</button>
-        <button class="button" onclick="goBack()">Go Back</button>
-    </div>
-
-    <!-- تصاویر Spot -->
-    <div id="ethImage" class="hidden">
-        <img src="Picsart_25-01-03_19-04-31-004.jpg" alt="ETH Chart Spot">
+        <h2>Futures Prices</h2>
+        <img src="Picsart_25-01-04_17-43-27-756.jpg" alt="Ton Futures Chart">
         <br>
-        <button class="button" onclick="hideImage()">Go Back</button>
-    </div>
-    <div id="btcImage" class="hidden">
-        <img src="Picsart_25-01-03_19-37-08-293.jpg" alt="BTC Chart Spot">
-        <br>
-        <button class="button" onclick="hideImage()">Go Back</button>
-    </div>
-
-    <!-- تصاویر Futures -->
-    <div id="TonImage" class="hidden">
-        <img src="Picsart_25-01-04_17-43-27-756.jpg" alt="Ton Chart Futures">
-        <br>
-        <button class="button" onclick="hideImage()">Go Back</button>
+        <button class="button" onclick="hideSections()">Go Back</button>
     </div>
 
     <footer>
@@ -118,46 +102,25 @@
     </footer>
 
     <script>
-        function showSection(section) {
-            // مخفی کردن دکمه‌های اصلی
+        function showSpot() {
             document.getElementById('mainButtons').classList.add('hidden');
-            // نمایش بخش انتخاب شده
-            if (section === 'spot') {
-                document.getElementById('spotSection').classList.remove('hidden');
-            } else if (section === 'futures') {
-                document.getElementById('futuresSection').classList.remove('hidden');
-            }
+            document.getElementById('spotSection').classList.remove('hidden');
         }
 
-        function showImage(type) {
-            // مخفی کردن بخش‌ها
+        function showFutures() {
+            document.getElementById('mainButtons').classList.add('hidden');
+            document.getElementById('futuresSection').classList.remove('hidden');
+        }
+
+        function hideSections() {
             document.getElementById('spotSection').classList.add('hidden');
             document.getElementById('futuresSection').classList.add('hidden');
-            // نمایش تصویر مرتبط
-            if (type === 'eth') {
-                document.getElementById('ethImage').classList.remove('hidden');
-            } else if (type === 'btc') {
-                document.getElementById('btcImage').classList.remove('hidden');
-            } else if (type === 'Ton') {
-                document.getElementById('TonImage').classList.remove('hidden');
-            }
-        }
-
-        function hideImage() {
-            // مخفی کردن تصاویر
-            document.getElementById('ethImage').classList.add('hidden');
-            document.getElementById('btcImage').classList.add('hidden');
-            document.getElementById('TonImage').classList.add('hidden');
-            // بازگشت به بخش اصلی
             document.getElementById('mainButtons').classList.remove('hidden');
         }
 
         function goBack() {
-            // مخفی کردن تمام بخش‌ها
-            document.getElementById('spotSection').classList.add('hidden');
-            document.getElementById('futuresSection').classList.add('hidden');
-            // نمایش دکمه‌های اصلی
-            document.getElementById('mainButtons').classList.remove('hidden');
+            // Replace '#' with the actual URL of the previous page
+            window.history.back();
         }
     </script>
 </body>
