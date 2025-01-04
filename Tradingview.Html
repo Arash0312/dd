@@ -82,19 +82,34 @@
 
     <!-- Spot Section -->
     <div id="spotSection" class="hidden">
-        <h2>Spot Prices</h2>
-        <img src="Picsart_25-01-03_19-04-31-004.jpg" alt="ETH Spot Chart">
+        <button class="button" onclick="showBTC()">BTC</button>
+        <button class="button" onclick="showETH()">ETH</button>
+        <button class="button" onclick="goBack()">Go Back</button>
+    </div>
+
+    <!-- BTC Section -->
+    <div id="btcSection" class="hidden">
+        <h2>BTC Spot Chart</h2>
         <img src="Picsart_25-01-03_19-37-08-293.jpg" alt="BTC Spot Chart">
         <br>
-        <button class="button" onclick="hideSections()">Go Back</button>
+        <button class="button" onclick="showSpot()">Go Back</button>
+    </div>
+
+    <!-- ETH Section -->
+    <div id="ethSection" class="hidden">
+        <h2>ETH Spot Chart</h2>
+        <img src="Picsart_25-01-03_19-04-31-004.jpg" alt="ETH Spot Chart">
+        <br>
+        <button class="button" onclick="showSpot()">Go Back</button>
     </div>
 
     <!-- Futures Section -->
     <div id="futuresSection" class="hidden">
         <h2>Futures Prices</h2>
+        <button class="button" onclick="showTon()">Ton</button>
         <img src="Picsart_25-01-04_17-43-27-756.jpg" alt="Ton Futures Chart">
         <br>
-        <button class="button" onclick="hideSections()">Go Back</button>
+        <button class="button" onclick="goBack()">Go Back</button>
     </div>
 
     <footer>
@@ -104,22 +119,38 @@
     <script>
         function showSpot() {
             document.getElementById('mainButtons').classList.add('hidden');
+            document.getElementById('btcSection').classList.add('hidden');
+            document.getElementById('ethSection').classList.add('hidden');
+            document.getElementById('futuresSection').classList.add('hidden');
             document.getElementById('spotSection').classList.remove('hidden');
         }
 
         function showFutures() {
             document.getElementById('mainButtons').classList.add('hidden');
+            document.getElementById('spotSection').classList.add('hidden');
+            document.getElementById('btcSection').classList.add('hidden');
+            document.getElementById('ethSection').classList.add('hidden');
             document.getElementById('futuresSection').classList.remove('hidden');
         }
 
-        function hideSections() {
+        function showTon() {
+            alert('Displaying Ton Futures!');
+            // Here you can add a custom behavior like showing a different Ton chart.
+        }
+
+        function showBTC() {
             document.getElementById('spotSection').classList.add('hidden');
-            document.getElementById('futuresSection').classList.add('hidden');
-            document.getElementById('mainButtons').classList.remove('hidden');
+            document.getElementById('ethSection').classList.add('hidden');
+            document.getElementById('btcSection').classList.remove('hidden');
+        }
+
+        function showETH() {
+            document.getElementById('spotSection').classList.add('hidden');
+            document.getElementById('btcSection').classList.add('hidden');
+            document.getElementById('ethSection').classList.remove('hidden');
         }
 
         function goBack() {
-            // Replace '#' with the actual URL of the previous page
             window.history.back();
         }
     </script>
