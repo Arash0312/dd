@@ -75,22 +75,30 @@
     <h1>Crypto Charts</h1>
     <div id="mainButtons">
         <button class="button" onclick="window.location.href='https://www.tradingview.com/'">See Chart</button>
-        <button class="button" onclick="showImage('eth')">ETH Chart</button>
-        <button class="button" onclick="showImage('btc')">BTC Chart</button>
+        <button class="button" onclick="showImage('eth')">ETH Chart Spot</button>
+        <button class="button" onclick="showImage('btc')">BTC Chart Spot</button>
+        <button class="button" onclick="showImage('Ton')">Ton Chart Futures</button>
         <!-- دکمه Go Back که برای بازگشت به صفحه اصلی استفاده میشود -->
         <button class="button" onclick="goBack()" id="goBackButton" class="hidden">Go Back</button>
     </div>
 
     <!-- ETH Chart Section -->
     <div id="ethImage" class="hidden">
-        <img src="Picsart_25-01-03_19-04-31-004.jpg" alt="ETH Chart">
+        <img src="Picsart_25-01-03_19-04-31-004.jpg" alt="ETH Chart Spot">
         <br>
         <button class="button" onclick="hideImage()">Go Back</button>
     </div>
 
     <!-- BTC Chart Section -->
     <div id="btcImage" class="hidden">
-        <img src="Picsart_25-01-03_19-37-08-293.jpg" alt="BTC Chart">
+        <img src="Picsart_25-01-03_19-37-08-293.jpg" alt="BTC Chart Spot">
+        <br>
+        <button class="button" onclick="hideImage()">Go Back</button>
+    </div>
+
+    <!-- Ton Chart Section -->
+    <div id="TonImage" class="hidden">
+        <img src="Picsart_25-01-04_17-43-27-756.jpg" alt="Ton Chart Futures">
         <br>
         <button class="button" onclick="hideImage()">Go Back</button>
     </div>
