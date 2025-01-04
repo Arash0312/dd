@@ -107,7 +107,7 @@
     <div id="futuresSection" class="hidden">
         <h2>Futures Prices</h2>
         <button class="button" onclick="showTon()">Ton</button>
-        <img src="Picsart_25-01-04_17-43-27-756.jpg" alt="Ton Futures Chart">
+        <img id="tonImage" class="hidden" src="Picsart_25-01-04_17-43-27-756.jpg" alt="Ton Futures Chart">
         <br>
         <button class="button" onclick="goBack()">Go Back</button>
     </div>
@@ -134,8 +134,8 @@
         }
 
         function showTon() {
-            alert('Displaying Ton Futures!');
-            // Here you can add a custom behavior like showing a different Ton chart.
+            // نمایش تصویر مربوط به Ton
+            document.getElementById('tonImage').classList.remove('hidden');
         }
 
         function showBTC() {
