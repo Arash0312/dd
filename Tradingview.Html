@@ -109,6 +109,9 @@
         <button class="button" onclick="showTon()">Ton</button>
         <img id="tonImage" class="hidden" src="Picsart_25-01-04_17-43-27-756.jpg" alt="Ton Futures Chart">
         <br>
+        <button class="button" onclick="showPepe()">Pepe</button>
+        <img id="pepeImage" class="hidden" src="Picsart_25-01-04_21-24-29-611.jpg" alt="Pepe Futures Chart">
+        <br>
         <button class="button" onclick="goBack()">Go Back</button>
     </div>
 
@@ -134,8 +137,13 @@
         }
 
         function showTon() {
-            // نمایش تصویر مربوط به Ton
             document.getElementById('tonImage').classList.remove('hidden');
+            document.getElementById('pepeImage').classList.add('hidden');
+        }
+
+        function showPepe() {
+            document.getElementById('pepeImage').classList.remove('hidden');
+            document.getElementById('tonImage').classList.add('hidden');
         }
 
         function showBTC() {
