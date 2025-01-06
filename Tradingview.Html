@@ -78,15 +78,16 @@
         <button class="button" onclick="showFutures()">Futures</button>
         <button class="button" onclick="window.location.href='https://www.tradingview.com/'">Chart</button>
         <button class="button" onclick="goBack()">Go Back</button>
+        <button class="button" onclick="showTradeHistory()">Trade History</button>
     </div>
 
     <!-- Spot Section -->
     <div id="spotSection" class="hidden">
-    <button class="button" onclick="window.location.href='https://arash0312.github.io/Lmain/'">BTC</button>
-    <button class="button" onclick="window.location.href='https://arash0217.github.io/Kk/'">ETH</button>
-    <br>
-    <button class="button" onclick="goBack()">Go Back</button>
-</div>
+        <button class="button" onclick="window.location.href='https://arash0312.github.io/Lmain/'">BTC</button>
+        <button class="button" onclick="window.location.href='https://arash0217.github.io/Kk/'">ETH</button>
+        <br>
+        <button class="button" onclick="goBack()">Go Back</button>
+    </div>
 
     <!-- BTC Section -->
     <div id="btcSection" class="hidden">
@@ -104,32 +105,22 @@
         <button class="button" onclick="showSpot()">Go Back</button>
     </div>
 
-<!-- Futures Section -->
-<div id="futuresSection" class="hidden">
-    <h2>Futures Prices</h2>
-    <button class="button" onclick="window.location.href='https://arash0312.github.io/kk/'">Ton</button>
-    <br>
-    <button class="button" onclick="goBack()">Go Back</button>
-</div>
-
-
-    <!-- Ton Section -->
-    <div id="tonSection" class="hidden">
-        <h2>Ton Futures Chart</h2>
-        <img src="Picsart_25-01-04_17-43-27-756.jpg" alt="Ton Futures Chart">
+    <!-- Futures Section -->
+    <div id="futuresSection" class="hidden">
+        <h2>Futures Prices</h2>
+        <button class="button" onclick="window.location.href='https://arash0312.github.io/kk/'">Ton</button>
         <br>
-        <button class="button" onclick="showFutures()">Go Back</button>
+        <button class="button" onclick="goBack()">Go Back</button>
     </div>
 
-<!-- pepe Section -->
-<div id="pepeSection" class="hidden">
-    <h2>Pepe Futures Chart</h2>
-    <a href="https://arash0312.github.io/mm/" target="_blank">
-        Visit Pepe Chart
-    </a>
-    <br>
-    <button class="button" onclick="showFutures()">Go Back</button>
-</div>
+    <!-- Trade History Section -->
+    <div id="tradeHistorySection" class="hidden">
+        <h2>Trade History</h2>
+        <img src="your-image.jpg" alt="Trade Example" style="max-width: 80%; border-radius: 10px;">
+        <p>این بخش برای نمایش تاریخچه معاملات شما است. در اینجا می‌توانید توضیحات مربوط به معامله‌های خود را اضافه کنید.</p>
+        <br>
+        <button class="button" onclick="goBack()">Go Back</button>
+    </div>
 
     <footer>
         Powered By <a href="https://t.me/AirdropBeFarsi" target="_blank">AirdropBeFarsi</a>
@@ -146,28 +137,15 @@
             document.getElementById('futuresSection').classList.remove('hidden');
         }
 
-        function showTon() {
-            document.getElementById('futuresSection').classList.add('hidden');
-            document.getElementById('tonSection').classList.remove('hidden');
-        }
-
-        function showPepe() {
-            document.getElementById('futuresSection').classList.add('hidden');
-            document.getElementById('pepeSection').classList.remove('hidden');
-        }
-
-        function showBTC() {
-            document.getElementById('spotSection').classList.add('hidden');
-            document.getElementById('btcSection').classList.remove('hidden');
-        }
-
-        function showETH() {
-            document.getElementById('spotSection').classList.add('hidden');
-            document.getElementById('ethSection').classList.remove('hidden');
+        function showTradeHistory() {
+            document.getElementById('mainButtons').classList.add('hidden');
+            document.getElementById('tradeHistorySection').classList.remove('hidden');
         }
 
         function goBack() {
-            window.history.back();
+            const sections = document.querySelectorAll('div[id$="Section"]');
+            sections.forEach(section => section.classList.add('hidden'));
+            document.getElementById('mainButtons').classList.remove('hidden');
         }
     </script>
 </body>
